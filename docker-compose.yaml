@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  nginx-rtmp:
+    build: .
+    container_name: nginx-rtmp
+    ports:
+      - "8080:80"
+      - "1935:1935"    
+    volumes:
+      - ./html:/opt/nginx/html
+      - ./nginx.conf:/opt/nginx/conf/nginx.conf:ro
+    restart: unless-stopped
