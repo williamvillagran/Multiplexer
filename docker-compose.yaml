@@ -1,9 +1,7 @@
-version: "3.8"
-
 services:
-  nginx-rtmp:
+  main:
     build: .
-    container_name: nginx-rtmp
+    container_name: multiplexer_server
     ports:
       - "8080:80"
       - "1935:1935"    
